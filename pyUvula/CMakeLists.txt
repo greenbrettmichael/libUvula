@@ -12,3 +12,11 @@ target_compile_definitions(pyUvula PRIVATE PYUVULA_VERSION="${PYUVULA_VERSION}")
 if (NOT MSVC AND NOT ${CMAKE_BUILD_TYPE} MATCHES Debug|RelWithDebInfo)
     pybind11_strip(pyUvula)
 endif ()
+
+# Install rule for pip / scikit-build-core wheel packaging.
+# Dropping the module at the wheel root makes `import pyUvula` work.
+install(TARGETS pyUvula
+        LIBRARY DESTINATION .
+        RUNTIME DESTINATION .
+        COMPONENT pyUvula
+)
