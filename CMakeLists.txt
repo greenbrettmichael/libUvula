@@ -1,5 +1,5 @@
 ﻿cmake_minimum_required(VERSION 3.23)
-
+o
 # --- Bootstrap Conan dependencies when building as a pip package ---
 # When invoked via `pip install` (scikit-build-core sets UVULA_PIP_BUILD=ON),
 # auto-run `conan install` to fetch the C++ dependencies and wire up the
@@ -18,6 +18,7 @@ if (UVULA_PIP_BUILD AND NOT CMAKE_TOOLCHAIN_FILE AND NOT _UVULA_CONAN_BOOTSTRAPP
                 --build=missing
                 --output-folder=${_UVULA_CONAN_OUTPUT}
                 -s build_type=Release
+                -s compiler.cppstd=20
         RESULT_VARIABLE _UVULA_CONAN_RC
     )
     if (NOT _UVULA_CONAN_RC EQUAL 0)
