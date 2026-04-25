@@ -32,7 +32,7 @@ Source = "https://github.com/Ultimaker/libUvula"
 minimum-version = "build-system.requires"
 cmake.version = ">=3.23"
 cmake.build-type = "Release"
-cmake.generator = "Ninja"
+cmake.args = ["-GNinja"]
 build.targets = ["pyUvula"]
 sdist.include = [
     "CMakeLists.txt",
