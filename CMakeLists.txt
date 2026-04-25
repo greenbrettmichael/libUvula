@@ -1,5 +1,5 @@
 ﻿cmake_minimum_required(VERSION 3.23)
-o
+
 # --- Bootstrap Conan dependencies when building as a pip package ---
 # When invoked via `pip install` (scikit-build-core sets UVULA_PIP_BUILD=ON),
 # auto-run `conan install` to fetch the C++ dependencies and wire up the
