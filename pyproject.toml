@@ -3,7 +3,6 @@ requires = [
     "scikit-build-core>=0.10",
     "pybind11>=2.11,<3.0",
     "conan>=2.7",
-    "ninja",
 ]
 build-backend = "scikit_build_core.build"
 
@@ -33,6 +32,7 @@ Source = "https://github.com/Ultimaker/libUvula"
 minimum-version = "build-system.requires"
 cmake.version = ">=3.23"
 cmake.build-type = "Release"
+cmake.generator = "Ninja"
 build.targets = ["pyUvula"]
 sdist.include = [
     "CMakeLists.txt",
