@@ -19,6 +19,7 @@ if (UVULA_PIP_BUILD AND NOT CMAKE_TOOLCHAIN_FILE AND NOT _UVULA_CONAN_BOOTSTRAPP
                 --output-folder=${_UVULA_CONAN_OUTPUT}
                 -s build_type=Release
                 -s compiler.cppstd=20
+                -c tools.cmake.cmaketoolchain:generator=Ninja
         RESULT_VARIABLE _UVULA_CONAN_RC
     )
     if (NOT _UVULA_CONAN_RC EQUAL 0)
