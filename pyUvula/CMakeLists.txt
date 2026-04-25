@@ -9,7 +9,7 @@ if (NOT MSVC)
 endif()
 target_link_libraries(pyUvula PUBLIC libuvula ${NEEDED_DEPS})
 target_compile_definitions(pyUvula PRIVATE PYUVULA_VERSION="${PYUVULA_VERSION}")
-if (NOT MSVC AND NOT ${CMAKE_BUILD_TYPE} MATCHES Debug|RelWithDebInfo)
+if (NOT MSVC AND NOT "${CMAKE_BUILD_TYPE}" MATCHES "Debug|RelWithDebInfo")
     pybind11_strip(pyUvula)
 endif ()
 
